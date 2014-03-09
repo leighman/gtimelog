@@ -14,11 +14,7 @@ import datetime
 import optparse
 import tempfile
 
-import gtimelog
-
-
 log = logging.getLogger('gtimelog')
-
 
 try:
     unicode
@@ -1229,7 +1225,7 @@ if dbus:
 def main():
     """Run the program."""
     parser = optparse.OptionParser(usage='%prog [options]',
-                                   version=gtimelog.__version__)
+                                   version=__version__)
     parser.add_option('--tray', action='store_true',
         help="start minimized")
     parser.add_option('--sample-config', action='store_true',
@@ -1272,7 +1268,7 @@ def main():
     global dbus
 
     if opts.debug:
-        print('GTimeLog version: %s' % gtimelog.__version__)
+        print('GTimeLog version: %s' % __version__)
         print('Toolkit: %s' % toolkit)
         print('Gtk+ version: %s' % gtk_version)
         print('D-Bus available: %s' % ('yes' if dbus else 'no'))
